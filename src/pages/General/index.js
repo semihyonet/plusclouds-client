@@ -1,7 +1,7 @@
 import React from "react";
 
 import Container from "../../components/Container";
-import Button from "../../components/Button";
+// import Button from "../../components/Button";
 
 const General = () => {
 	return (
