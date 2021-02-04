@@ -1,0 +1,12 @@
+.container {
+	background-color: #fff;
+	display: flex;
+	padding: 2.5vh 0vw;
+	justify-content: space-between;
+	width: 100%;
+}
+.textElement {
+	padding-left: 10px;
+	padding-right: 15px;
+	font-weight: 600;
+}
