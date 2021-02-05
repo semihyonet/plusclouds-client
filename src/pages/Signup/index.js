@@ -27,7 +27,9 @@ const SignUp = () => {
 						style={{ width: "100%" }}
 						value={username}
 						onChange={(e) => {
-							setUsername(e.target.value);
+							setUsername(
+								e.target.value.replace(/[^A-Za-z]/gi, "")
+							);
 						}}
 					/>
 				</div>
@@ -37,7 +39,9 @@ const SignUp = () => {
 						style={{ width: "100%" }}
 						value={password}
 						onChange={(e) => {
-							setPassword(e.target.value);
+							setPassword(
+								e.target.value.replace(/[^a-zA-Z0-9 ]/gi, "")
+							);
 						}}
 					/>
 				</div>

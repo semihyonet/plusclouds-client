@@ -42,7 +42,9 @@ function AuthModal({ children, complete, setData }) {
 					<input
 						value={text}
 						onChange={(e) => {
-							setText(e.target.value);
+							setText(
+								e.target.value.replace(/[^a-zA-Z0-9@. ]/gi, "")
+							);
 						}}
 						style={{ width: "100%" }}
 					/>
