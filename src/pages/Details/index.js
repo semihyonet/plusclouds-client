@@ -20,23 +20,31 @@ const General = () => {
 						justifyContent: "space-around",
 					}}
 				>
-					<div>
-						<Header as={"h2"}>Username:</Header>
-						<Header as={"h3"}>Telefon numarası:</Header>
-						<Header as={"h3"}>Mail:</Header>
-						<Header as={"h3"}>TC numarası:</Header>
+					<div style={{ display: "flex", flexDirection: "column" }}>
+						<Header style={{ flex: 1 }} as={"h2"}>
+							Username:
+						</Header>
+						<Header style={{ flex: 1 }} as={"h3"}>
+							Telefon numarası:
+						</Header>
+						<Header style={{ flex: 1 }} as={"h3"}>
+							Mail:
+						</Header>
+						<Header style={{ flex: 1 }} as={"h3"}>
+							TC numarası:
+						</Header>
 					</div>
-					<div>
-						<Header as={"h2"}>
+					<div style={{ display: "flex", flexDirection: "column" }}>
+						<Header style={{ flex: 1 }} as={"h4"}>
 							{user.username ? user.username : "Eklenmemiş"}
 						</Header>
-						<Header as={"h3"}>
+						<Header style={{ flex: 1 }} as={"h4"}>
 							{user.gsmNumber ? user.gsmNumber : "Eklenmemiş"}
 						</Header>
-						<Header as={"h3"}>
+						<Header style={{ flex: 1 }} as={"h4"}>
 							{user.mail ? user.mail : "Eklenmemiş"}
 						</Header>
-						<Header as={"h3"}>
+						<Header style={{ flex: 1 }} as={"h4"}>
 							{user.tcNo ? user.tcNo : "Eklenmemiş"}
 						</Header>
 					</div>
