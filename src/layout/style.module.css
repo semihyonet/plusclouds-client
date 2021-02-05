@@ -1,0 +1,23 @@
+.background {
+	overflow: hidden;
+	background-image: linear-gradient(to right bottom, #00baf2ba, #0a1f44ac),
+		url("../assets/authBg.jpg");
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+
+.cont {
+	padding: 0px 50px;
+	width: 22vw;
+	height: 50vh;
+	background-color: #fff;
+	border-radius: 20px;
+	align-self: center;
+
+	-webkit-box-shadow: 0px 10px 38px 4px rgba(0, 0, 0, 0.48);
+	box-shadow: 0px 10px 38px 4px rgba(0, 0, 0, 0.48);
+}
