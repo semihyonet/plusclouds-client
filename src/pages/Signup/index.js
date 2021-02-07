@@ -1,11 +1,51 @@
 import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
+import { UserOutlined } from "@ant-design/icons";
 
+import { Input } from "antd";
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 
 import Button from "../../components/Button";
 
 import Context from "../../context/context";
+const Username = ({ cb }) => {
+	return (
+		<Input
+			className={styles.input}
+			onChange={cb}
+			size="large"
+			placeholder="Enter Username"
+			prefix={<UserOutlined />}
+			style={{
+				borderRadius: 20,
+				padding: 15,
+				fontSize: 20,
+				fontWeight: "700",
+			}}
+		/>
+	);
+};
+
+const Password = ({ cb }) => {
+	return (
+		<Input.Password
+			className={styles.input}
+			size={"large"}
+			style={{
+				borderRadius: 20,
+				padding: 15,
+				fontSize: 20,
+				fontWeight: "700",
+			}}
+			placeholder="input password"
+			iconRender={(visible) =>
+				visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+			}
+			onChange={cb}
+		/>
+	);
+};
 
 const SignUp = () => {
 	let history = useHistory();
@@ -15,18 +55,15 @@ const SignUp = () => {
 
 	return (
 		<div className={styles.mainContainer}>
-			<h3>Merhaba!</h3>
 			<form
+				style={{ paddingTop: 38 }}
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
 			>
 				<div className={styles.container}>
-					<div className={styles.smallText}>Kullanıcı adı </div>
-					<input
-						style={{ width: "100%" }}
-						value={username}
-						onChange={(e) => {
+					<Username
+						cb={(e) => {
 							setUsername(
 								e.target.value.replace(/[^A-Za-z]/gi, "")
 							);
@@ -34,11 +71,8 @@ const SignUp = () => {
 					/>
 				</div>
 				<div className={styles.container}>
-					<div className={styles.smallText}>Şifre</div>
-					<input
-						style={{ width: "100%" }}
-						value={password}
-						onChange={(e) => {
+					<Password
+						cb={(e) => {
 							setPassword(
 								e.target.value.replace(/[^a-zA-Z0-9 ]/gi, "")
 							);
@@ -68,9 +102,11 @@ const SignUp = () => {
 							style={{
 								fontWeight: "900",
 								fontSize: 20,
+								paddingRight: 80,
+								paddingLeft: 80,
 							}}
 						>
-							Üye ol
+							Sign up
 						</div>
 					</Button>
 				</div>

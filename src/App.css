@@ -1,3 +1,4 @@
+@import "~antd/dist/antd.css";
 * {
 	padding: 0px;
 }
@@ -15,9 +16,11 @@ a:focus {
 .AppContainer {
 	width: 100%;
 	background-color: #eef0f8;
+	height: 100vh;
 }
 .Screen {
-	padding: 30px 10vw;
+	padding: 10vh 10vw;
+	padding-left: 300px;
 	padding-right: 15vw;
 }
 

@@ -1,11 +1,53 @@
 import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
+import { UserOutlined } from "@ant-design/icons";
+
+import { Input } from "antd";
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 
 import { useHistory } from "react-router-dom";
 
 import Button from "../../components/Button";
 
 import Context from "../../context/context";
+
+const Username = ({ cb }) => {
+	return (
+		<Input
+			className={styles.input}
+			onChange={cb}
+			size="large"
+			placeholder="Enter Username"
+			prefix={<UserOutlined />}
+			style={{
+				borderRadius: 20,
+				padding: 15,
+				fontSize: 20,
+				fontWeight: "700",
+			}}
+		/>
+	);
+};
+
+const Password = ({ cb }) => {
+	return (
+		<Input.Password
+			className={styles.input}
+			size={"large"}
+			style={{
+				borderRadius: 20,
+				padding: 15,
+				fontSize: 20,
+				fontWeight: "700",
+			}}
+			placeholder="input password"
+			iconRender={(visible) =>
+				visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+			}
+			onChange={cb}
+		/>
+	);
+};
 
 const Login = () => {
 	let history = useHistory();
@@ -15,18 +57,14 @@ const Login = () => {
 
 	return (
 		<div className={styles.mainContainer}>
-			<h3>Tekrar Hoşgeldiniz!</h3>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
 			>
 				<div className={styles.container}>
-					<div className={styles.smallText}>Kullanıcı adı </div>
-					<input
-						style={{ width: "100%" }}
-						value={username}
-						onChange={(e) => {
+					<Username
+						cb={(e) => {
 							setUsername(
 								e.target.value.replace(/[^A-Za-z]/gi, "")
 							);
@@ -34,11 +72,8 @@ const Login = () => {
 					/>
 				</div>
 				<div className={styles.container}>
-					<div className={styles.smallText}>Şifre</div>
-					<input
-						value={password}
-						style={{ width: "100%" }}
-						onChange={(e) => {
+					<Password
+						cb={(e) => {
 							setPassword(
 								e.target.value.replace(/[^a-zA-Z0-9 ]/gi, "")
 							);
@@ -67,9 +102,11 @@ const Login = () => {
 							style={{
 								fontWeight: "900",
 								fontSize: 20,
+								paddingRight: 80,
+								paddingLeft: 80,
 							}}
 						>
-							Giriş
+							Login
 						</div>
 					</Button>
 				</div>
@@ -89,7 +126,7 @@ const Login = () => {
 					fontWeight: "700",
 				}}
 			>
-				Hesapınız yokmu? Üye olun!
+				Don't have an account? Sign up!
 			</button>
 			<div
 				style={{

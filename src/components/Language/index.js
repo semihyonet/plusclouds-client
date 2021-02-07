@@ -25,17 +25,26 @@ const languageOptions = [
 	{ key: "Vietnamese", text: "Vietnamese", value: "Vietnamese" },
 ];
 
-const DropdownExampleSearchDropdown = () => (
-	<Dropdown
-		button
-		className="icon"
-		floating
-		labeled
-		icon="world"
-		options={languageOptions}
-		search
-		text="Select Language"
-	/>
-);
+const DropdownExampleSearchDropdown = () => {
+	return (
+		<div
+			style={{
+				alignContent: "center",
+				justifyContent: "center",
+				padding: 5,
+			}}
+		>
+			<Dropdown
+				className="icon"
+				floating
+				labeled
+				style={{ fontSize: 17 }}
+				icon="world"
+				options={languageOptions}
+				defaultValue={languageOptions[0].value}
+			/>
+		</div>
+	);
+};
 
 export default DropdownExampleSearchDropdown;

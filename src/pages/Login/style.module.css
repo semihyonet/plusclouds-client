@@ -25,15 +25,9 @@ input[type="text"]:focus {
 }
 
 .mainContainer {
-	padding-top: 3vh;
+	padding-top: 7vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
-}
-
-h3 {
-	font-size: 20px;
-	font-weight: 800;
-	color: #444;
 }

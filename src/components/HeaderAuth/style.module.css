@@ -1,16 +1,43 @@
+.contAll {
+	position: absolute;
+
+	top: 6vh;
+	left: 50%;
+
+	transform: translate(-50%, 0%);
+	align-self: center;
+	align-content: center;
+	justify-content: center;
+	flex-direction: column;
+}
 .container {
-	background-color: #fff;
 	display: flex;
 	padding: 2.5vh 0vw;
-	justify-content: space-between;
+
 	width: 100%;
-	-webkit-box-shadow: 0px 10px 38px 4px rgba(0, 0, 0, 0.48);
-	box-shadow: 0px 10px 38px 4px rgba(0, 0, 0, 0.48);
-	position: absolute;
-	top: 0;
+	justify-content: center;
 }
 .textElement {
 	padding-left: 10px;
 	padding-right: 15px;
 	font-weight: 600;
+}
+.catchPhrase {
+	align-content: center;
+	justify-self: center;
+}
+
+.h1,
+.h3 {
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+.h1,
+.h3 {
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+
+.h3 {
+	font-size: 15px;
 }

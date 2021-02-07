@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar";
 import "../App.css";
 import Context from "../context/context";
 import { useHistory } from "react-router-dom";
+import Support from "../components/Support";
 
 const Ui = ({ children }) => {
 	const { token } = useContext(Context);
@@ -19,6 +20,8 @@ const Ui = ({ children }) => {
 	return (
 		<div className="App">
 			<SideBar />
+			<Support />
+
 			<div className={"AppContainer"}>
 				<Header />
 				<div className="Screen">{children}</div>
